@@ -10,7 +10,10 @@
     <div class="row py-4">
         <div class="col-sm-4"></div>
         <div class="col-sm-4 bg-primary rounded p-4 text-light">
-            <h4>Login</h4>
+            <div class="d-flex justify-content-between">
+                <h4>Login</h4>
+                <a href="../"><button class="btn btn-sm btn-light">Volver</button></a>
+            </div>
             <div class="bg-light pt-1 my-2"></div>
 
             <form action="index.php" method="POST" class="px-4">
@@ -19,7 +22,7 @@
                 <input class="form-control form-control-sm bg-light " type="email" name="email" required>
                 <br>
                 <label class="p-1">Contraseña</label>
-                <input class="form-control form-control-sm bg-light " type="text" name="pass" required>
+                <input class="form-control form-control-sm bg-light " type="password" name="pass" required>
                 <br>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-sm btn-light px-4">Entrar<i

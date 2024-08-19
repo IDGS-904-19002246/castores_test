@@ -25,6 +25,7 @@
                     <button class="btn btn-sm btn-light" data-bs-toggle="modal"
                         data-bs-target="#nuevo">Añadir <i class="bi bi-plus-circle-fill"></i></button>
                     <a href="../"><button class="btn btn-sm btn-light" onclick="logout()">Cerrar Sesión</button></a>
+                    <a href="../"><button class="btn btn-sm btn-light">Volver</button></a>
                 </div>
             </div>
             <div class="bg-light pt-1 my-2"></div>

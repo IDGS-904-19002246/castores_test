@@ -22,6 +22,7 @@
             <div class="d-flex justify-content-between">
                 <h4>Salida de productos</h4>
                 <a href="../"><button class="btn btn-sm btn-light" onclick="logout()">Cerrar Sesión</button></a>
+                <a href="../"><button class="btn btn-sm btn-light">Volver</button></a>
             </div>
             <div class="bg-light pt-1 my-2"></div>
 
