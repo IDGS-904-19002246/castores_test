@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     title: "Bienvenido",
                 }).then((result) => {
                     localStorage.setItem("login_user", JSON.stringify('.json_encode($sesion).'));
-                    window.location = "http://localhost/Ejercicio%20pr%C3%A1ctico%20-%20DB/";
+                    window.location = "../";
                 });
                 
                 ';

@@ -21,6 +21,7 @@
         <div class="col-sm-10 bg-primary rounded p-4 text-light">
             <div class="d-flex justify-content-between">
                 <h4>Salida de productos</h4>
+                <a href="../"><button class="btn btn-sm btn-light" onclick="logout()">Cerrar Sesión</button></a>
             </div>
             <div class="bg-light pt-1 my-2"></div>
 

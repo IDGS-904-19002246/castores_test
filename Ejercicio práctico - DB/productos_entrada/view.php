@@ -21,8 +21,11 @@
         <div class="col-sm-10 bg-primary rounded p-4 text-light">
             <div class="d-flex justify-content-between">
                 <h4>Inventario</h4>
-                <button class="btn btn-sm btn-light" data-bs-toggle="modal"
-                    data-bs-target="#nuevo">Añadir <i class="bi bi-plus-circle-fill"></i></button>
+                <div>
+                    <button class="btn btn-sm btn-light" data-bs-toggle="modal"
+                        data-bs-target="#nuevo">Añadir <i class="bi bi-plus-circle-fill"></i></button>
+                    <a href="../"><button class="btn btn-sm btn-light" onclick="logout()">Cerrar Sesión</button></a>
+                </div>
             </div>
             <div class="bg-light pt-1 my-2"></div>
 

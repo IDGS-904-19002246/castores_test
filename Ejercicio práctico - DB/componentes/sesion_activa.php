@@ -8,4 +8,7 @@
     }else{
         window.location = "http://localhost/Ejercicio%20pr%C3%A1ctico%20-%20DB/";
     }
+    function logout() {
+        localStorage.removeItem('login_user');
+    }
 </script>
