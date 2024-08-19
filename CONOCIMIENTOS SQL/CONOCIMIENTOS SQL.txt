@@ -1,0 +1,65 @@
+1.1) Describe el funcionamiento general de la sentencia JOIN.
+
+    El propósito de la sentencia JOIN es el unir dos (o más) tablas usando un campo de
+    cada tabla, los campos  usados para unir las tablas normalmente son una
+    llave primaria y una llave foránea. se puede replicar el mismo resultado usando
+    sub-querys pero usando joins no ocasionará errores porque las querys retornen
+    nulo o demasiados registros.
+
+
+1.2) ¿Cuáles son los tipos de JOIN y cuál es el funcionamiento de los mismos?
+    inner join: une tablas donde existan coincidencias entre los campos que se
+        usen para unir las tablas.
+    left join: une tablas pero todos los campos de la tabla de la izquierda siempre se
+        mostraran aunque en la tabla de la derecha no existan confidencias, los campos
+        de la tabla de la derecha en caso de no encontrar confidencias todos los campos
+        de esta tabla serian null.
+    right join: en esencia el lo mismo que left join pero los campos que siempre se
+        mostrarán son los de la tabla derecha y los que aparecerán o mostrarán null
+        (en caso de encontrar coincidencias) son los de la tabla izquierda.
+    full join: une las tos tablas y muestra todos los registros de una tabla,
+        en caso de no encontrar coincidencias muestra null en los datos de la segunda tabla.
+    cross join: genera un plano cartesiano, toma la primer tabla como eje x y la
+        segunda como eje x. la utilidad de este es generar todas las combinaciones
+        que se pueden hacer entre las dos tablas.
+    
+
+1.3) ¿Cuál el funcionamiento general de los TRIGGER y qué propósito tienen?
+    Son acciones (o una serie de acciones) que se ejecutan antes o después de una acción
+    en la base de datos, la acción que dispare el evento se puede especificar: un insert, delete o
+    update sobre una tabla especifica. Este evento se ejecutara de manera automática.
+
+1.4) ¿Qué es y para qué sirve un STORED PROCEDURE?
+    Es en siento modo una función que se encuentra almacenada en la base de datos, dentro de
+    esta se pueden colocar varias querys o lógica como lo pueden ser condicionales o ciclos.
+    estas de pueden llamas desde una query o desde otros lenguajes de programación,
+    también se le pueden añadir parámetros para usar en las querys que están dentro de la función.
+
+
+1.5) Traer todos los productos que tengan una venta.
+    SELECT
+        p.*,
+        COUNT(v.idVenta) 'en cuantas ventas aparece'
+    FROM productos p
+    INNER JOIN ventas v ON p.idProducto = v.idProducto
+    GROUP BY p.idProducto
+
+1.6) Traer todos los productos que tengan ventas y la cantidad total
+de productos vendidos.
+    SELECT
+        p.*,
+        SUM(v.cantidad) 'productos vendidos'
+    FROM productos p
+    INNER JOIN ventas v ON p.idProducto = v.idProducto
+    GROUP BY p.idProducto
+
+1.7) Traer todos los productos (independientemente de si tienen ventas o no)
+y la suma total ($) vendida por producto.
+    SELECT
+        p.*,
+        ifnull(SUM(v.cantidad),0) 'productos vendidos',
+        ifnull(SUM(v.cantidad),0) * p.precio 'suma total'
+        
+    FROM productos p
+    left JOIN ventas v ON p.idProducto = v.idProducto
+    GROUP BY p.idProducto
